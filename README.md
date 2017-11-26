@@ -9,6 +9,45 @@ All changes should be made via the PR workflow.
 This project is packaged in Fedora as the spin-kickstarts package allowing users to see 
 and modify the kickstart files for their local needs. 
 
+## Custom repo for fedora spin 'hardwaretest'
+
+Hardware testing repo based on fedora gnome spin.
+
+Additional tools:
+* coreboot-utils
+* fwts
+* stress
+* glmark2
+* python
+* python-devel
+* gcc
+* nasm
+* redhat-rpm-config
+* git
+
+Removed packages:
+* firewalld
+* firefox
+* libreoffice
+* gnome-*
+* @eclipse
+* @php
+* @web-server
+* @fonts
+* anaconda
+* @printing
+* @multimedia
+* brasero
+* plymouth*
+* fedora-logos
+* qemu*
+* sane*
+* cheese
+* pipewire
+
+### Build
+    livemedia-creator --ks fedora-live-hardwaretest.ks --no-virt --resultdir /var/lmc --project Fedora-HardwareTest-Live --make-iso --volid Fedora-HardwareTest-Live --iso-only --iso-name Fedora-HardwareTest-Live.iso --releasever 27 --title Fedora-HardwareTest-Live --macboot --lorax-templates ./share/
+
 ## To make a release ##
 
     git clone ssh://git@pagure.io/fedora-kickstarts.git fedora-kickstarts
